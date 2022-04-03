@@ -10,7 +10,7 @@ namespace RegexExceptionalProblems
     {
         public enum ExceptionType
         {
-            NULL_FIELD,Null,
+            NULL_FIELD,OVERFLOW,
             INVALID_INPUT,
         }
         private readonly ExceptionType type;

@@ -9,10 +9,10 @@ namespace RegexExceptionalProblems
         {
             Console.WriteLine("Welcome to the regex Program ");
 
-            string Email;
-            Console.Write("Enter your Last Name : ");
-            Email = Console.ReadLine();
-            RegexProblem.checkFirstName(Email);
+            string MobileNumber;
+            Console.Write("Enter your Mobile Number :\n ");
+            MobileNumber = Console.ReadLine();
+            RegexProblem.checkMobileNumber(MobileNumber);
             
         }
     }

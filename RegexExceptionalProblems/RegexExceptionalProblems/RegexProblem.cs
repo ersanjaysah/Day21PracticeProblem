@@ -10,25 +10,25 @@ namespace RegexExceptionalProblems
     public class RegexProblem
     {
 
-        public static string Regex_Email = (@"^[a-z]{3}(\.[a-z]{3})[@]bl.(|co|in)$");
+        public static string Regex_MobileNumber = ("^91 [9876][0-9]{9}$");
 
 
-        public bool ValidateFirstName(string Email)
+        public bool ValidateMobileNumber(string MobileNumber)
         {
-            return Regex.IsMatch(Email, Regex_Email);
+            return Regex.IsMatch(MobileNumber, Regex_MobileNumber);
 
         }
-        public static void checkFirstName(string Email)
+        public static void checkMobileNumber(string MobileNumber)
         {
             try
             {
-                if (Email == String.Empty || Email == " ")
+                if (MobileNumber == String.Empty || MobileNumber == " ")
                 {
                     throw new ExceptionalHandling(ExceptionalHandling.ExceptionType.NULL_FIELD, "Field is empty ");
                 }
-                else if (Regex.IsMatch(Email, Regex_Email) == false)
+                else if (Regex.IsMatch(MobileNumber, Regex_MobileNumber) == false)
                 {
-                    throw new ExceptionalHandling(ExceptionalHandling.ExceptionType.INVALID_INPUT, "Invalid input please check your Email Address ");
+                    throw new ExceptionalHandling(ExceptionalHandling.ExceptionType.INVALID_INPUT, "Invalid input please check your Mobile Number ");
                 }
             }
             catch (Exception ex)
