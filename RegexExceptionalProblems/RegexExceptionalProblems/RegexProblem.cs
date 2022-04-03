@@ -10,23 +10,23 @@ namespace RegexExceptionalProblems
     public class RegexProblem
     {
 
-        public static string Regex_PasswordRules = ("^[A-Za-z0-9]{8}$");
+        public static string Regex_PasswordRulesUpperCase = ("^[A-Z][a-z]{7}$");
 
 
-        public bool ValidatePasswordRules(string PasswordRules)
+        public bool ValidatePasswordRulesUpperCase(string PasswordRulesUpperCase)
         {
-            return Regex.IsMatch(PasswordRules, Regex_PasswordRules);
+            return Regex.IsMatch(PasswordRulesUpperCase, Regex_PasswordRulesUpperCase);
 
         }
-        public static void checkPasswordRules(string PasswordRules)
+        public static void checkPasswordRulesUpperCase(string PasswordRulesUpperCase)
         {
             try
             {
-                if (PasswordRules == String.Empty || PasswordRules == " ")
+                if (PasswordRulesUpperCase == String.Empty || PasswordRulesUpperCase == " ")
                 {
                     throw new ExceptionalHandling(ExceptionalHandling.ExceptionType.NULL_FIELD, "Field is empty ");
                 }
-                else if (Regex.IsMatch(PasswordRules, Regex_PasswordRules) == false)
+                else if (Regex.IsMatch(PasswordRulesUpperCase, Regex_PasswordRulesUpperCase) == false)
                 {
                     throw new ExceptionalHandling(ExceptionalHandling.ExceptionType.INVALID_INPUT, "Invalid Password please check your Password ");
                 }
