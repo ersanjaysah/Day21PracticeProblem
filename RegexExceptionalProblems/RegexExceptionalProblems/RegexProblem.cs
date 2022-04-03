@@ -10,23 +10,23 @@ namespace RegexExceptionalProblems
     public class RegexProblem
     {
 
-        public static string Regex_PasswordRulesNumberic = ("^[A-Z][0-9][a-z]{6}$");
+        public static string Regex_PasswordRulesSpecialChar = (@"^[A-Z][0-9](|_|.|-|~)[a-z]{5}$");
 
 
-        public bool ValidatePasswordRulesNumberic(string PasswordRulesNumberic)
+        public bool ValidatePasswordRulesSpecialChar(string PasswordRulesSpecialChar)
         {
-            return Regex.IsMatch(PasswordRulesNumberic, Regex_PasswordRulesNumberic);
+            return Regex.IsMatch(PasswordRulesSpecialChar, Regex_PasswordRulesSpecialChar);
 
         }
-        public static void checkPasswordRulesNumberic(string PasswordRulesNumberic)
+        public static void checkPasswordRulesSpecialChar(string PasswordRulesSpecialChar)
         {
             try
             {
-                if (PasswordRulesNumberic == String.Empty || PasswordRulesNumberic == " ")
+                if (PasswordRulesSpecialChar == String.Empty || PasswordRulesSpecialChar == " ")
                 {
                     throw new ExceptionalHandling(ExceptionalHandling.ExceptionType.NULL_FIELD, "Field is empty ");
                 }
-                else if (Regex.IsMatch(PasswordRulesNumberic, Regex_PasswordRulesNumberic) == false)
+                else if (Regex.IsMatch(PasswordRulesSpecialChar, Regex_PasswordRulesSpecialChar) == false)
                 {
                     throw new ExceptionalHandling(ExceptionalHandling.ExceptionType.INVALID_INPUT, "Invalid Password please check your Password ");
                 }
