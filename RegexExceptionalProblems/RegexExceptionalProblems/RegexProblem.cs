@@ -10,32 +10,32 @@ namespace RegexExceptionalProblems
     public class RegexProblem
     {
 
-        public static string Regex_LastName = "^[A-Z][a-z]{2,}$";
-        public bool ValidateFirstName(string LastName)
+        public static string Regex_Email = (@"^[a-z]{3}(\.[a-z]{3})[@]bl.(|co|in)$");
+
+
+        public bool ValidateFirstName(string Email)
         {
-            return Regex.IsMatch(LastName, Regex_LastName);
+            return Regex.IsMatch(Email, Regex_Email);
 
         }
-        public static void checkFirstName(string LastName)
+        public static void checkFirstName(string Email)
         {
             try
             {
-                if (LastName == String.Empty || LastName == " ")
+                if (Email == String.Empty || Email == " ")
                 {
                     throw new ExceptionalHandling(ExceptionalHandling.ExceptionType.NULL_FIELD, "Field is empty ");
                 }
-                else if (Regex.IsMatch(LastName, Regex_LastName) == false)
+                else if (Regex.IsMatch(Email, Regex_Email) == false)
                 {
-                    throw new ExceptionalHandling(ExceptionalHandling.ExceptionType.INVALID_INPUT, "Invalid input please check your char of name ");
+                    throw new ExceptionalHandling(ExceptionalHandling.ExceptionType.INVALID_INPUT, "Invalid input please check your Email Address ");
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
-           
-
-            Console.WriteLine("code is executed");
+           Console.WriteLine("code is executed");
         }
     }
 }
