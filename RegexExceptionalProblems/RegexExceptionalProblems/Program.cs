@@ -9,11 +9,11 @@ namespace RegexExceptionalProblems
         {
             Console.WriteLine("Welcome to the regex Program ");
 
-            string MobileNumber;
-            Console.Write("Enter your Mobile Number :\n ");
-            MobileNumber = Console.ReadLine();
-            RegexProblem.checkMobileNumber(MobileNumber);
-            
+            string PasswordRules;
+            Console.Write("Enter your Password :\n ");
+            PasswordRules = Console.ReadLine();
+            RegexProblem.checkPasswordRules(PasswordRules);
+
         }
     }
 }

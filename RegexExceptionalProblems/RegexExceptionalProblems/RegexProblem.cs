@@ -10,25 +10,25 @@ namespace RegexExceptionalProblems
     public class RegexProblem
     {
 
-        public static string Regex_MobileNumber = ("^91 [9876][0-9]{9}$");
+        public static string Regex_PasswordRules = ("^[A-Za-z0-9]{8}$");
 
 
-        public bool ValidateMobileNumber(string MobileNumber)
+        public bool ValidatePasswordRules(string PasswordRules)
         {
-            return Regex.IsMatch(MobileNumber, Regex_MobileNumber);
+            return Regex.IsMatch(PasswordRules, Regex_PasswordRules);
 
         }
-        public static void checkMobileNumber(string MobileNumber)
+        public static void checkPasswordRules(string PasswordRules)
         {
             try
             {
-                if (MobileNumber == String.Empty || MobileNumber == " ")
+                if (PasswordRules == String.Empty || PasswordRules == " ")
                 {
                     throw new ExceptionalHandling(ExceptionalHandling.ExceptionType.NULL_FIELD, "Field is empty ");
                 }
-                else if (Regex.IsMatch(MobileNumber, Regex_MobileNumber) == false)
+                else if (Regex.IsMatch(PasswordRules, Regex_PasswordRules) == false)
                 {
-                    throw new ExceptionalHandling(ExceptionalHandling.ExceptionType.INVALID_INPUT, "Invalid input please check your Mobile Number ");
+                    throw new ExceptionalHandling(ExceptionalHandling.ExceptionType.INVALID_INPUT, "Invalid Password please check your Password ");
                 }
             }
             catch (Exception ex)
