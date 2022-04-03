@@ -10,33 +10,31 @@ namespace RegexExceptionalProblems
     public class RegexProblem
     {
 
-        public static string Regex_FirstName = "^[A-Z][a-z]{2,}$";
-        public bool ValidateFirstName(string FirstName)
+        public static string Regex_LastName = "^[A-Z][a-z]{2,}$";
+        public bool ValidateFirstName(string LastName)
         {
-            return Regex.IsMatch(FirstName, Regex_FirstName);
+            return Regex.IsMatch(LastName, Regex_LastName);
 
         }
-        public static void checkFirstName(string FirstName)
+        public static void checkFirstName(string LastName)
         {
             try
             {
-                if (FirstName == String.Empty || FirstName == " ")
+                if (LastName == String.Empty || LastName == " ")
                 {
                     throw new ExceptionalHandling(ExceptionalHandling.ExceptionType.NULL_FIELD, "Field is empty ");
                 }
-                else if (Regex.IsMatch(FirstName, Regex_FirstName) == false)
+                else if (Regex.IsMatch(LastName, Regex_LastName) == false)
                 {
                     throw new ExceptionalHandling(ExceptionalHandling.ExceptionType.INVALID_INPUT, "Invalid input please check your char of name ");
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message+"True");
+                Console.WriteLine(ex.Message);
             }
-            //finally
-            //{
-            //    Console.WriteLine("True");
-            //}
+           
+
             Console.WriteLine("code is executed");
         }
     }
