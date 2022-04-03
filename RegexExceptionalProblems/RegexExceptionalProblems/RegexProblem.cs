@@ -10,25 +10,25 @@ namespace RegexExceptionalProblems
     public class RegexProblem
     {
 
-        public static string Regex_PasswordRulesSpecialChar = (@"^[A-Z][0-9](|_|.|-|~)[a-z]{5}$");
+        public static string Regex_EmailValidation = ("^[A-Za-z0-9.+-]{1,}[a-zA-Z0-9]@[a-z0-9]{1,}.(co|org|com|in|us|net|au|com.com|com.au)$");
 
 
-        public bool ValidatePasswordRulesSpecialChar(string PasswordRulesSpecialChar)
+        public bool ValidateEmailValidation(string EmailValidation)
         {
-            return Regex.IsMatch(PasswordRulesSpecialChar, Regex_PasswordRulesSpecialChar);
+            return Regex.IsMatch(EmailValidation, Regex_EmailValidation);
 
         }
-        public static void checkPasswordRulesSpecialChar(string PasswordRulesSpecialChar)
+        public static void checkEmailValidation(string EmailValidation)
         {
             try
             {
-                if (PasswordRulesSpecialChar == String.Empty || PasswordRulesSpecialChar == " ")
+                if (EmailValidation == String.Empty || EmailValidation == " ")
                 {
                     throw new ExceptionalHandling(ExceptionalHandling.ExceptionType.NULL_FIELD, "Field is empty ");
                 }
-                else if (Regex.IsMatch(PasswordRulesSpecialChar, Regex_PasswordRulesSpecialChar) == false)
+                else if (Regex.IsMatch(EmailValidation, Regex_EmailValidation) == false)
                 {
-                    throw new ExceptionalHandling(ExceptionalHandling.ExceptionType.INVALID_INPUT, "Invalid Password please check your Password ");
+                    throw new ExceptionalHandling(ExceptionalHandling.ExceptionType.INVALID_INPUT, "Invalid Email please check your Email ");
                 }
             }
             catch (Exception ex)

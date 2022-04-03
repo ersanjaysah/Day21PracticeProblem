@@ -9,10 +9,10 @@ namespace RegexExceptionalProblems
         {
             Console.WriteLine("Welcome to the regex Program ");
 
-            string PasswordRulesSpecialChar;
-            Console.Write("Enter your Password:\n");
-            PasswordRulesSpecialChar = Console.ReadLine();
-            RegexProblem.checkPasswordRulesSpecialChar(PasswordRulesSpecialChar);
+            string EmailValidation;
+            Console.Write("Enter your EmailId:\n");
+            EmailValidation = Console.ReadLine();
+            RegexProblem.checkEmailValidation(EmailValidation);
 
         }
     }
